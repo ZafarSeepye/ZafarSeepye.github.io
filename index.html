@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zafar Seepye | Software Engineer</title>
+<meta name="description" content="Zafar Seepye, final-year Software Engineering student in Pretoria. Full-stack, databases, cloud and AI-assisted development.">
+<meta property="og:title" content="Zafar Seepye | Software Engineer">
+<meta property="og:description" content="Final-year Software Engineering student in Pretoria, graduating 2026. Open to internships and graduate roles.">
+<meta property="og:image" content="https://zafarseepye.github.io/assets/oneboard.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#07090d; --surface:#0e1219; --surface-2:#131926; --border:#1d2533;
+    --text:#e8edf5; --muted:#8e98aa; --faint:#5d6779;
+    --accent:#4c8dff; --accent-soft:rgba(76,141,255,.12); --teal:#2ee6d6;
+    --radius:14px; --max:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;
+       line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:
+      radial-gradient(900px 500px at 85% -10%, rgba(76,141,255,.10), transparent 60%),
+      radial-gradient(700px 400px at -10% 30%, rgba(46,230,214,.05), transparent 60%),
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,.035) 1px, transparent 0) 0 0/28px 28px;}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(12px);background:rgba(7,9,13,.72);border-bottom:1px solid var(--border)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-weight:800;letter-spacing:.04em;font-size:15px}
+  .logo span{color:var(--accent)}
+  .links{display:flex;gap:28px;font-size:14px;color:var(--muted)}
+  .links a:hover{color:var(--text)}
+
+  /* hero */
+  .hero{padding:110px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);
+    border:1px solid var(--border);background:var(--surface);padding:6px 14px;border-radius:999px}
+  .dot{width:8px;height:8px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 4px rgba(61,220,132,.15)}
+  h1{font-size:clamp(44px,8vw,84px);line-height:1.02;font-weight:800;letter-spacing:-.03em;margin:26px 0 14px}
+  .bar{width:64px;height:4px;border-radius:4px;background:var(--accent);margin-bottom:22px}
+  .role{font-size:clamp(19px,2.6vw,24px);font-weight:600;color:var(--text)}
+  .lede{max-width:620px;color:var(--muted);font-size:17px;margin-top:14px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;font-weight:600;font-size:15px;
+       border:1px solid var(--border);background:var(--surface);transition:border-color .2s,transform .2s}
+  .btn:hover{border-color:#34405a;transform:translateY(-1px)}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#04101f}
+  .btn.primary:hover{background:#6aa0ff}
+  .btn svg{width:17px;height:17px}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:64px}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px}
+  .stat b{display:block;font-size:28px;font-weight:800;letter-spacing:-.02em}
+  .stat span{font-size:13px;color:var(--muted)}
+
+  /* sections */
+  section{padding:80px 0}
+  .label{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  h2{font-size:clamp(28px,4vw,38px);font-weight:800;letter-spacing:-.02em;margin:10px 0 36px}
+
+  /* featured project */
+  .feature{display:grid;grid-template-columns:1.15fr 1fr;gap:0;background:var(--surface);border:1px solid var(--border);
+    border-radius:18px;overflow:hidden}
+  .feature .shot{background:#05070a;display:flex;align-items:center;justify-content:center;border-right:1px solid var(--border)}
+  .feature img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block}
+  .feature .body{padding:34px}
+  .tag{display:inline-block;font-size:12px;font-weight:600;color:var(--teal);background:rgba(46,230,214,.08);
+       border:1px solid rgba(46,230,214,.25);padding:3px 10px;border-radius:999px;margin-bottom:14px}
+  h3{font-size:22px;font-weight:700;letter-spacing:-.01em;margin-bottom:8px}
+  .body p{color:var(--muted);font-size:15px}
+  ul.points{list-style:none;margin:16px 0}
+  ul.points li{position:relative;padding-left:18px;color:var(--muted);font-size:14.5px;margin-bottom:7px}
+  ul.points li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:2px;background:var(--accent)}
+  .stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+  .stack span{font-family:"JetBrains Mono",monospace;font-size:12px;color:#b9c3d4;background:var(--surface-2);
+       border:1px solid var(--border);padding:3px 9px;border-radius:6px}
+  .more{display:inline-flex;gap:6px;align-items:center;margin-top:20px;font-weight:600;font-size:14px;color:var(--accent)}
+  .more:hover{text-decoration:underline}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;
+        transition:border-color .2s,transform .2s}
+  .card:hover{border-color:#34405a;transform:translateY(-2px)}
+  .card h3{font-size:18px}
+  .card p{color:var(--muted);font-size:14.5px;flex:1}
+  .card .more{margin-top:18px}
+
+  /* experience */
+  .timeline{border-left:2px solid var(--border);margin-left:6px}
+  .item{position:relative;padding:0 0 38px 30px}
+  .item:last-child{padding-bottom:0}
+  .item::before{content:"";position:absolute;left:-8px;top:6px;width:14px;height:14px;border-radius:50%;
+       background:var(--bg);border:3px solid var(--accent)}
+  .when{font-size:13px;color:var(--faint);font-weight:500}
+  .item h3{font-size:19px;margin:2px 0 4px}
+  .where{color:var(--muted);font-size:14.5px}
+
+  /* skills */
+  .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .skill{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px}
+  .skill h4{font-size:14px;font-weight:600;margin-bottom:12px;color:var(--text)}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chips span{font-size:13px;color:#c7d0de;background:var(--surface-2);border:1px solid var(--border);padding:4px 11px;border-radius:999px}
+
+  /* education */
+  .edu{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .edu .card p{flex:none}
+  .grade{font-size:30px;font-weight:800;color:var(--accent);letter-spacing:-.02em;margin:10px 0 2px}
+  .certs{list-style:none}
+  .certs li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--border);font-size:14.5px}
+  .certs li:last-child{border-bottom:0}
+  .certs li span:last-child{color:var(--faint);white-space:nowrap}
+
+  /* contact */
+  .contact{background:linear-gradient(135deg,#0f1625,#0b0f17);border:1px solid var(--border);border-radius:20px;padding:56px 40px;text-align:center}
+  .contact p{color:var(--muted);max-width:520px;margin:0 auto}
+  .contact .cta{justify-content:center}
+  footer{padding:40px 0 50px;text-align:center;color:var(--faint);font-size:13px}
+
+  /* reveal */
+  .js .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+  .js .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+  @media (max-width:860px){
+    .feature{grid-template-columns:1fr}
+    .feature .shot{border-right:0;border-bottom:1px solid var(--border)}
+    .grid{grid-template-columns:1fr}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .skills,.edu{grid-template-columns:1fr}
+    .links{display:none}
+  }
+  @media (max-width:520px){
+    .wrap{padding:0 16px}
+    .hero{padding:70px 0 50px}
+    section{padding:56px 0}
+    .feature .body{padding:24px}
+    .contact{padding:40px 22px}
+    .certs li{flex-direction:column;gap:2px}
+    .stats{gap:10px;margin-top:44px}
+    .stat{padding:16px}
+    .stat b{font-size:21px;white-space:nowrap}
+    .stat span{font-size:12.5px;line-height:1.4;display:block;margin-top:2px}
+  }
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo">ZAFAR<span>.</span>SEEPYE</a>
+    <div class="links">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow"><span class="dot"></span>Open to internships and graduate roles in 2026</div>
+    <h1>Zafar Seepye</h1>
+    <div class="bar"></div>
+    <div class="role">Software Engineer</div>
+    <p class="lede">Final-year Software Engineering student in Pretoria. I build complete software, from the first client conversation and the database design through to the interface, testing and documentation.</p>
+    <div class="cta">
+      <a class="btn primary" href="#projects">View my work</a>
+      <a class="btn" href="https://www.linkedin.com/in/zafarseepye" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        LinkedIn</a>
+      <a class="btn" href="https://github.com/ZafarSeepye" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3"/></svg>
+        GitHub</a>
+      <a class="btn" href="mailto:zafarseepye@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+        Email</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>91.9%</b><span>Average across 18 modules</span></div>
+      <div class="stat"><b>Team lead</b><span>Four-person full-stack project</span></div>
+      <div class="stat"><b>Client work</b><span>Point-of-sale system in progress</span></div>
+      <div class="stat"><b>Protea</b><span>Represented South Africa, 2022</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="label reveal">Projects</div>
+    <h2 class="reveal">Things I've built</h2>
+
+    <article class="feature reveal">
+      <div class="shot"><img src="assets/oneboard.jpg" alt="OneBoard verified traveller profile screen" loading="lazy"></div>
+      <div class="body">
+        <span class="tag">Team lead · In progress</span>
+        <h3>OneBoard</h3>
+        <p>A digital airport boarding pass. One signed QR code takes a passenger through check-in, security and boarding, with live flight updates along the way.</p>
+        <ul class="points">
+          <li>QR passes signed with ECDSA that expire and carry no personal data</li>
+          <li>South African ID validation and an eight-table SQL Server database</li>
+          <li>Led the requirements, architecture and code reviews for a team of four</li>
+        </ul>
+        <div class="stack"><span>ASP.NET Core</span><span>SQL Server</span><span>EF Core</span><span>JavaScript</span></div>
+        <a class="more" href="https://github.com/ZafarSeepye/OneBoard" target="_blank" rel="noopener">See the showcase &rarr;</a>
+      </div>
+    </article>
+
+    <div class="grid">
+      <article class="card reveal">
+        <h3>Home Affairs ID Processor</h3>
+        <p>Validates South African ID numbers, calculates age from the date of birth and generates a timestamped citizen profile.</p>
+        <div class="stack"><span>C#</span><span>Windows Forms</span><span>OOP</span></div>
+        <a class="more" href="https://github.com/ZafarSeepye/home-affairs-id-processor" target="_blank" rel="noopener">View code &rarr;</a>
+      </article>
+      <article class="card reveal">
+        <h3>Mzansi Payroll System</h3>
+        <p>Calculates contractor pay, UIF, PAYE and deductions, with every payroll rule checked by automated tests.</p>
+        <div class="stack"><span>C#</span><span>MSTest</span><span>TDD</span></div>
+        <a class="more" href="https://github.com/ZafarSeepye/MzansiPayrollSystem" target="_blank" rel="noopener">View code &rarr;</a>
+      </article>
+      <article class="card reveal">
+        <h3>ULMS Testing Project</h3>
+        <p>Tested a learning management system, wrote the test plan and defect reports, then fixed all seven logged bugs. Marked 94%.</p>
+        <div class="stack"><span>.NET</span><span>Testing</span><span>Debugging</span></div>
+        <a class="more" href="https://github.com/ZafarSeepye/ULMSWinFormsApp-SDT621" target="_blank" rel="noopener">View code &rarr;</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="label reveal">Experience</div>
+    <h2 class="reveal">Work-integrated learning</h2>
+    <div class="timeline">
+      <div class="item reveal">
+        <div class="when">Jul 2026 – Present</div>
+        <h3>Software Developer (WIL)</h3>
+        <div class="where">Point-of-sale system for a food takeaway business</div>
+        <ul class="points">
+          <li>Ran client discovery and wrote the System Requirements Specification</li>
+          <li>Designed the normalised database, ERD and SQL scripts</li>
+          <li>Compared seven POS and accounting products to support the build-or-buy decision</li>
+        </ul>
+      </div>
+      <div class="item reveal">
+        <div class="when">Nov 2025 · Remote</div>
+        <h3>Job Shadow (WIL)</h3>
+        <div class="where">Shadowed a senior specialist on application rehosting</div>
+        <ul class="points">
+          <li>Assisted with development tasks and learned how applications are moved onto new platforms</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="label reveal">Skills</div>
+    <h2 class="reveal">What I work with</h2>
+    <div class="skills">
+      <div class="skill reveal"><h4>Languages</h4><div class="chips"><span>C#</span><span>Python</span><span>Java</span><span>JavaScript</span><span>SQL</span><span>HTML</span><span>CSS</span></div></div>
+      <div class="skill reveal"><h4>Web and desktop</h4><div class="chips"><span>ASP.NET Core</span><span>Entity Framework Core</span><span>.NET</span><span>Windows Forms</span></div></div>
+      <div class="skill reveal"><h4>Data</h4><div class="chips"><span>SQL Server</span><span>SQLite</span><span>Database design</span><span>Normalisation</span><span>Power BI</span></div></div>
+      <div class="skill reveal"><h4>Quality, cloud and tools</h4><div class="chips"><span>Unit testing</span><span>TDD</span><span>Microsoft Azure</span><span>Azure DevOps</span><span>Git</span><span>Claude Code</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="label reveal">Education</div>
+    <h2 class="reveal">Qualifications and certifications</h2>
+    <div class="edu">
+      <div class="card reveal">
+        <div class="when">2025 – 2026 · CTU Training Solutions</div>
+        <h3>Occupational Certificate: Software Engineer (NQF 6)</h3>
+        <div class="grade">90.9%</div>
+        <p>Average to date. Software Design 100%, Database Design 94%, Test and Debug 94%.</p>
+      </div>
+      <div class="card reveal">
+        <div class="when">2024 · CTU Training Solutions</div>
+        <h3>Programming Foundation (NQF 4)</h3>
+        <div class="grade">92.9%</div>
+        <p>Average. Work Integrated Learning 100%, Computer Architecture 95%, Python 91%.</p>
+      </div>
+    </div>
+    <div class="card reveal" style="margin-top:16px">
+      <h3>Certifications</h3>
+      <ul class="certs">
+        <li><span>Microsoft Certified: Azure Data Fundamentals (DP-900)</span><span>Microsoft</span></li>
+        <li><span>IT Specialist: JavaScript · IT Specialist: HTML and CSS</span><span>Certiport</span></li>
+        <li><span><a href="https://verify.skilljar.com/c/qan6nqxetizq" target="_blank" rel="noopener">Claude Code 101</a> · <a href="https://verify.skilljar.com/c/bigv8iraiky8" target="_blank" rel="noopener">Claude Code in Action</a></span><span>Anthropic</span></li>
+        <li><span>Java Certification Course</span><span>Programming Hub</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact reveal">
+      <div class="label">Contact</div>
+      <h2 style="margin-bottom:14px">Let's talk</h2>
+      <p>I'm looking for a software development internship or graduate role starting in 2026. I'm based in Pretoria, have a valid driver's licence, and speak English and Afrikaans.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:zafarseepye@gmail.com">zafarseepye@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/zafarseepye" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>&copy; 2026 Zafar Seepye</footer>
+
+<script>
+  (function(){
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.12});
+    els.forEach(function(e){io.observe(e)});
+  })();
+</script>
+</body>
+</html>
